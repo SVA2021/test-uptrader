@@ -8,6 +8,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: $dark;
+	color: $light;
 	font-size: $font-size;
 	font-family: $font-text;
 	scroll-behavior: smooth;
@@ -39,6 +40,13 @@ a {
 .container {
 	margin: 0 auto;
 	width: $mq-xs;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	main {
+		flex: 1 0 auto;
+	}
 
 	@include tablet {
 		width: $mq-sm;
