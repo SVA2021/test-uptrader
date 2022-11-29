@@ -8,7 +8,7 @@ export type TodoStatusT = 'Queue' | 'Development' | 'Done';
 export type TodoPriorityT = 'low' | 'normal' | 'high';
 
 export interface SubTaskI {
-    title: string
+    isFinished: boolean
     description: string
 }
 
@@ -28,11 +28,11 @@ export interface TodoTaskI {
     status: TodoStatusT
     priority: TodoPriorityT
     subTask: SubTaskI[]
-    comments: CommentI
+    comments: CommentI[]
 }
 
 export interface ProjectI {
-    id: number
+    id: string
     name: string
     todos: TodoTaskI[]
 }
