@@ -13,20 +13,22 @@ export interface SubTaskI {
 }
 
 export interface CommentI {
-    comment: string | CommentI
+    id: number
+    name: string
+    subComments: CommentI[]
 }
 
 export interface TodoTaskI {
     id: number
     title: string
     description: string
-    initialDate: Date
-    expirationDate: Date
+    initialDate: string
+    expirationDate: string
     files: string[]
     status: TodoStatusT
     priority: TodoPriorityT
     subTask: SubTaskI[]
-    comment: CommentI
+    comments: CommentI
 }
 
 export interface ProjectI {
