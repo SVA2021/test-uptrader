@@ -43,7 +43,7 @@ export const Comment: FC<CommentPropsI> = ({comment, isEditMode, setSubComments}
 
     return (
         <div className={s.comment} >
-            <h4 className={s.title} title={`click to ${isVisible ? 'hide' : 'show'}`} onClick={() => setIsVisible(!isVisible)}  >{comment.name}</h4>
+            <h5 className={s.title} title={`click to ${isVisible ? 'hide' : 'show'}`} onClick={() => setIsVisible(!isVisible)}  >{comment.name}</h5>
             {(isVisible && subCommentsLocal.length !== 0) &&
                 <div className={s.body} >
                     {subCommentsLocal.map((item) =>
