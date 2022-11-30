@@ -39,8 +39,8 @@ export const TodoItem: FC<TodoItemI> = ({item, editTask}) => {
             <div className={s.comments} >
                 <h4 className={s.comments__title} >sub tasks</h4>
                 <div className={s.comments__body} >
-                    {item.subTask.map((subTask) =>
-                        <p style={{textDecoration: subTask.isFinished ? 'line-through' : 'none'}} >
+                    {item.subTask.map((subTask, index) =>
+                        <p key={index} style={{textDecoration: subTask.isFinished ? 'line-through' : 'none'}} >
                             {subTask.description}
                         </p>
                     )}
