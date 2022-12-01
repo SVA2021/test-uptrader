@@ -23,7 +23,7 @@ body {
 	}
 
 	::-webkit-scrollbar-thumb {
-		background-color: red;
+		background-color: violet;
 		border-radius: 5px 0 0 5px;
 	}
 }
@@ -40,12 +40,11 @@ a {
 .container {
 	margin: 0 auto;
 	width: $mq-xs;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
+	height: 96vh;
 
 	main {
-		flex: 1 0 auto;
+		height: calc(96vh - 72px);
+		overflow: hidden;
 	}
 
 	@include tablet {
