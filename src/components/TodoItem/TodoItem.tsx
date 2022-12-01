@@ -1,17 +1,49 @@
 import {formatDistance} from 'date-fns'
 import {FC} from "react"
-import {TodoTaskI} from "../../types"
+import {TodoStatusT, TodoTaskI} from "../../types"
 import {Comment} from '../index'
 import s from './TodoItem.module.scss'
+import {useDrag} from 'react-dnd'
 
-interface TodoItemI {
+export interface TodoItemI {
     item: TodoTaskI
     editTask: (id: number) => void
+    moveTodo: (id: number, status: TodoStatusT) => void
 }
 
-export const TodoItem: FC<TodoItemI> = ({item, editTask}) => {
+interface DropResult {
+    allowedDropEffect: TodoStatusT
+    dropEffect: string
+    item: TodoTaskI
+}
+
+export const TodoItem: FC<TodoItemI> = ({item, editTask, moveTodo}) => {
+
+    const [{opacity}, drag] = useDrag(
+        () => ({
+            type: 'box',
+            item,
+            end(item, monitor) {
+                const dropResult = monitor.getDropResult() as DropResult
+                if (item && dropResult) {
+                    let alertMessage = 'You cannot move it'
+                    const isDropAllowed = dropResult.allowedDropEffect !== item.status
+                    if (isDropAllowed) {
+                        moveTodo(item.id, dropResult.allowedDropEffect);
+                        alertMessage = `Drop Allowed id: ${item.id} container: ${dropResult.allowedDropEffect}`
+                    }
+                    console.log(alertMessage)
+                }
+            },
+            collect: (monitor) => ({
+                opacity: monitor.isDragging() ? 0.2 : 1,
+            }),
+        }),
+        [],
+    )
+
     return (
-        <div className={s.body} >
+        <div className={s.body} ref={drag} style={{opacity}} >
             <p className={s.id} >task ID: {item.id}</p>
             <p className={s.id} >status: {item.status}</p>
             <p className={s.id} >priority: {item.priority}</p>
