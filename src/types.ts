@@ -8,6 +8,7 @@ export type TodoStatusT = 'Queue' | 'Development' | 'Done';
 export type TodoPriorityT = 'low' | 'normal' | 'high';
 
 export interface SubTaskI {
+    id: number
     isFinished: boolean
     description: string
 }
