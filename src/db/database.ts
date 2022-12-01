@@ -21,10 +21,12 @@ export const ProjectsFake: ProjectI[] = [
                 status: 'Development',
                 subTask: [
                     {
+                        id: 0,
                         isFinished: false,
                         description: 'subtask description 1',
                     },
                     {
+                        id: 1,
                         isFinished: true,
                         description: 'subtask description 2',
                     },
@@ -49,10 +51,12 @@ export const ProjectsFake: ProjectI[] = [
                 status: 'Done',
                 subTask: [
                     {
+                        id: 0,
                         isFinished: false,
                         description: 'subtask description 1',
                     },
                     {
+                        id: 1,
                         isFinished: true,
                         description: 'subtask description 2',
                     },
@@ -77,10 +81,12 @@ export const ProjectsFake: ProjectI[] = [
                 status: 'Queue',
                 subTask: [
                     {
+                        id: 0,
                         isFinished: false,
                         description: 'subtask description 1',
                     },
                     {
+                        id: 1,
                         isFinished: true,
                         description: 'subtask description 2',
                     },
