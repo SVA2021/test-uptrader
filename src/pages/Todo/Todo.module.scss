@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 
 .wrapper {
+    position: relative;
     height: 100%;
 }
 
@@ -31,4 +32,38 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.btn {
+    padding: 1em;
+    color: $orange;
+    background-color: $dark;
+    border: 1px solid $light;
+    border-radius: 8px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__input {
+    padding: 0.5em;
+    border: 1px solid $orange;
+    border-radius: 0.5em;
+}
+
+.form__btn {
+    margin-left: 2em;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    color: $dark;
+    background-color: $orange;
+}
+
+.header {
+    margin: 0 auto;
 }
