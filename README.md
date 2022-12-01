@@ -8,4 +8,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Deploy of project
 
-[You can see here](https://github.com/UptraderTestTask/Junior-frontend).
+[You can see here](https://test-uptrader.vercel.app).
