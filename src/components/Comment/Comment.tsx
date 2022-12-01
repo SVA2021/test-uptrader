@@ -59,7 +59,7 @@ export const Comment: FC<CommentPropsI> = ({comment, isEditMode, setSubComments}
                 isEditMode &&
                 <div className={s.form} >
                     <input className={s.form__input} type="text" ref={inputRef} />
-                    <button className={s.form__btn} onClick={() => addComment()} >add comment</button>
+                    <button className={s.form__btn} onClick={() => addComment()} >add sub comment</button>
                 </div>
             }
 
