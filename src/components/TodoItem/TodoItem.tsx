@@ -42,6 +42,10 @@ export const TodoItem: FC<TodoItemI> = ({item, editTask, moveTodo}) => {
         [],
     )
 
+    function clickHandler() {
+        editTask(item.id)
+    }
+
     return (
         <div className={s.body} ref={drag} style={{opacity}} >
             <p className={s.id} >task ID: {item.id}</p>
@@ -86,7 +90,7 @@ export const TodoItem: FC<TodoItemI> = ({item, editTask, moveTodo}) => {
                     )}
                 </div>
             </div>
-            <button className={s.editBtn} onClick={() => editTask(item.id)} >edit</button>
+            <button className={s.editBtn} onClick={clickHandler} >edit</button>
         </div>
     )
 }
